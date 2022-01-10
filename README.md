@@ -2,7 +2,7 @@
 
 - This project uses [Laravel](https://laravel.com) for the backend
 - We also made use of [Meilisearch](https://www.meilisearch.com/) for smooth search experience
-- The frontend has beautiful JavaScript'S popup boxex thanks to [SweetAlert](https://sweetalert2.github.io)
+- The frontend has beautiful JavaScript's popup boxes thanks to [SweetAlert](https://sweetalert2.github.io)
 
 1. Run `git clone https://github.com/ChawerKamanga/syad-group-one-backend.git`
 2. cd into the project 
