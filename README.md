@@ -4,6 +4,8 @@
 - We also made use of [Meilisearch](https://www.meilisearch.com/) for smooth search experience
 - The frontend has beautiful JavaScript's popup boxes thanks to [SweetAlert](https://sweetalert2.github.io)
 
+### Installation ###
+
 1. Run `git clone https://github.com/ChawerKamanga/syad-group-one-backend.git`
 2. cd into the project 
 3. Install Composer Dependencies by running `composer install`
