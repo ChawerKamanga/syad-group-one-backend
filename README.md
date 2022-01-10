@@ -9,3 +9,4 @@
 7. Create an empty database for the application
 8. In the .env file, add database information to allow Laravel to connect to the database
 ![Image of the .env!](/readmeimages/screenshot.png)
+9. Migrate the database by running php artisan migrate
