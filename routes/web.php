@@ -40,6 +40,8 @@ Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contactu
 Route::get('/', [LandingPageController::class, 'index']);
 Route::get('/home', [LandingPageController::class, 'index'])->name('home');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard-temp', [DashboardController::class, 'showDash'])->name('tempdashboard');
+
 
 // Users routes
 Route::get('application-form', [UsersController::class, 'showForm'])

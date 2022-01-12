@@ -14,6 +14,7 @@ class DashboardController extends Controller
     public function __construct() {
         $this->middleware(['auth']);
     }
+
     public function index()
     {
         $msg = 'Dashboard';
@@ -31,5 +32,10 @@ class DashboardController extends Controller
 
 
         return view('dashboard.index', ['mesho' => $mesho, 'hallmates' => $hallmates, 'msg' => $msg]);
+    }
+
+    public function showDash()
+    {
+        return view('dashboard.temp');
     }
 }
