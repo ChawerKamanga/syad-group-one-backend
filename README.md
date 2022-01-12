@@ -6,6 +6,7 @@
 
 ### Installation ###
 
+
 1. Run `git clone https://github.com/ChawerKamanga/syad-group-one-backend.git`
 2. cd into the project 
 3. Install Composer Dependencies by running `composer install`
@@ -16,3 +17,4 @@
 8. In the .env file, add database information to allow Laravel to connect to the database
 ![Image of the .env!](/readmeimages/screenshot.png)
 9. Migrate the database by running `php artisan migrate`
+10. Run development server by running `php artisan serve`
