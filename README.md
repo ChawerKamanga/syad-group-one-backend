@@ -17,8 +17,4 @@
 8. In the .env file, add database information to allow Laravel to connect to the database
 ![Image of the .env!](/readmeimages/screenshot.png)
 9. Migrate the database by running `php artisan migrate`
-<<<<<<< HEAD
 10. Run development server by running `php artisan serve`
-=======
-10. Start Development Server by runing `php artisan serve`
->>>>>>> d8d6f7c6de742142f439be06339f3e2f6874d305
