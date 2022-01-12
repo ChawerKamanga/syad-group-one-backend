@@ -48,6 +48,10 @@
 
 
       (function() {
+        let cData = JSON.parse(`<?php echo $chart_data; ?>`);
+
+        // console.log(cData);
+
         /* Add current date to the footer */
         document.getElementById("javascript-date").innerHTML = new Date().getFullYear();
         /* Chart initialisations */
@@ -55,30 +59,25 @@
         var config = {
           type: "line",
           data: {
-            labels: [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July"
-            ],
+            label: "Users Count",
+            // labels: [
+            //   "January",
+            //   "February",
+            //   "March",
+            //   "April",
+            //   "May",
+            //   "June",
+            //   "July"
+            // ],
+            labels: cData.label,
             datasets: [
               {
                 label: new Date().getFullYear(),
                 backgroundColor: "#4c51bf",
                 borderColor: "#4c51bf",
-                data: [65, 78, 66, 44, 56, 67, 75],
+                data: cData.data,
                 fill: false
               },
-              {
-                label: new Date().getFullYear() - 1,
-                fill: false,
-                backgroundColor: "#ed64a6",
-                borderColor: "#ed64a6",
-                data: [40, 68, 86, 74, 56, 60, 87]
-              }
             ]
           },
           options: {

@@ -148,7 +148,7 @@
                       Overview
                     </h6>
                     <h2 class="text-white text-xl font-semibold">
-                      Sales value
+                      Number of Applicants
                     </h2>
                   </div>
                 </div>
