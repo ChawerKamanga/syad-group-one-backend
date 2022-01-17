@@ -62,4 +62,5 @@ class DashboardController extends Controller
 
         return view('dashboard.index', $data, $data1, ['mesho' => $mesho, 'hallmates' => $hallmates]);
     }    
+
 }
