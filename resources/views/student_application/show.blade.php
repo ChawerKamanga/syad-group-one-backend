@@ -50,7 +50,11 @@
                         <div class="relative">
                           <img
                             alt="..."
-                            src="{{ asset('images/upload/' . $user->profile_pic ) }}"
+                            @if ($user->profile_pic)
+                              src="{{ asset('images/upload/' . $user->profile_pic ) }}"
+                            @else
+                              src="{{ asset('images/upload/no-pic.png') }}"                                
+                            @endif
                             class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                             style="max-width: 150px;"
                           />

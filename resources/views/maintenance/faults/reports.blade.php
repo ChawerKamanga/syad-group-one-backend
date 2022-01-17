@@ -83,18 +83,18 @@
                   </div>
                   <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                     <a
-                      href="{{ route('maintenance.create') }}"
+                      href="{{ route('maintenance.index') }}"
                       class="bg-blue-500 text-white active:bg-blue-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                       style="transition:all .15s ease"
                     >
-                      Add Faults
+                      Back
                     </a>
                   </div>
                 </div>
               </div>
               <div class="block w-full overflow-x-auto">
                 <!-- Projects table -->  
-                @if ($reportedFaults->count() > 0)
+                @if ($reportedFaults->count())
                   <table class="items-center w-full bg-transparent border-collapse">
                     <thead class="thead-light">
                       <tr>
@@ -125,10 +125,10 @@
                             {{ $reportedFault->user->fullname }}
                           </td>
                           <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                            {{ $reportedFault->fault->fault_name }}
+                              {{ $reportedFault->fault->fault_name }}
                           </td>
                           <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                            Hall 3 Room 48
+                            {{ $reportedFault->user->hall->hall_name }} Room {{ $reportedFault->user->allocation->room->room_name }}
                           </td>
                           <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
                             @if ($reportedFault->is_solved == 0)
@@ -158,7 +158,7 @@
                   </table>
                 @else
                   <div class="items-center w-full bg-transparent border-collapse flex justify-center p-10">
-                     <p>No faults found please add by clicking on <a href="{{ route('maintenance.create') }}" class="underline text-blue-600">add faults</a> </p>
+                     <p>No faults reported</p>
                   </div> 
                 @endif
               </div>

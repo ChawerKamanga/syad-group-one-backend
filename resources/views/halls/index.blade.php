@@ -146,10 +146,16 @@
                               <span class="mr-2">{{ ($campHall->users->count() / $campHall->max_students) * 100}}%</span>
                               @if (($campHall->users->count() / $campHall->max_students) * 100 <= 49)
                                 <div class="relative w-full">
-                                  <div class="overflow-hidden h-2 text-xs flex rounded bg-green-200">
+                                  <div class="overflow-hidden h-2 text-xs flex rounded @if($campHall->gender == 'M') bg-green-200 @else bg-pink-200 @endif">
                                     <div
                                     style="width:{{ ($campHall->users->count() / $campHall->max_students) * 100}}%"
-                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center 
+                                      @if($campHall->gender == 'M')
+                                      bg-green-500 
+                                      @else
+                                      bg-pink-500 
+                                      @endif
+                                      "
                                     ></div>
                                   </div>
                                 </div>

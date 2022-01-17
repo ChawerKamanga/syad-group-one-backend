@@ -150,7 +150,10 @@ class UsersController extends Controller
                 'rooms' => $rooms,
                 'msg' => $msg
             ]);
-        }else {
+        }
+        
+        if($user->gender == 'M' && $user->year_of_study == 1){
+            $rooms = Room::orderBy('id', 'asc')->take(4)->get();
             $campHalls = Hall::orderBy('id', 'asc')
             ->where([
                 ['is_at_camp', '=', 1],
@@ -167,6 +170,7 @@ class UsersController extends Controller
             ]);
         }
 
+
        
         if ($user->gender == 'F' && $user->year_of_study >= 2) {
             $campusHalls = Hall::orderBy('id', 'asc')
@@ -180,6 +184,22 @@ class UsersController extends Controller
                 'user' => $user,
                 'campusHalls' => $campusHalls,
                 'campHalls' => null,
+                'rooms' => $rooms,
+                'msg' => $msg
+            ]);
+        }else {
+            $rooms = Room::orderBy('id', 'asc')->take(4)->get();
+            $campHalls = Hall::orderBy('id', 'asc')
+            ->where([
+                ['is_at_camp', '=', 1],
+                ['gender', '=', 'F'],
+            ])
+            ->get();
+
+            return view('student_application.show', [
+                'user' => $user,
+                'campusHalls' => null,
+                'campHalls' => $campHalls,
                 'rooms' => $rooms,
                 'msg' => $msg
             ]);

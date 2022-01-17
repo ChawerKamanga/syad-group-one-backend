@@ -39,7 +39,11 @@
             ><img
                 alt="..."
                 class="w-full rounded-full align-middle border-none shadow-lg"
-                src="{{ asset('images/upload/' . Auth::user()->profile_pic ) }}"
+                @if (Auth::user()->profile_pic)
+                    src="{{ asset('images/upload/' . Auth::user()->profile_pic ) }}"
+                @else
+                    src="{{ asset('images/upload/no-pic.png') }}"
+                @endif
             /></span>
         </div>
         </a>
