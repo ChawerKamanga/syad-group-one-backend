@@ -4,9 +4,11 @@
 
 <div id="root">
     <x-dashboard-side-nav />
+
     <div class="relative md:ml-64 bg-blueGray-50">
       <x-admin-top-navigation :message="'Dashboard'"/>
-      <!-- Header -->
+      
+      <!-- Admin Header -->
       <div class="relative bg-blue-600 md:pt-32 pb-32 pt-12">
         <div class="px-4 md:px-10 mx-auto w-full">
           <div>
@@ -76,7 +78,7 @@
                     <div class="flex flex-wrap">
                       <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                         <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                          Sales
+                          Allocated Student
                         </h5>
                         <span class="font-semibold text-xl text-blueGray-700">
                           924
@@ -105,10 +107,10 @@
                     <div class="flex flex-wrap">
                       <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                         <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                          Performance
+                          Faults
                         </h5>
                         <span class="font-semibold text-xl text-blueGray-700">
-                          49,65%
+                          49
                         </span>
                       </div>
                       <div class="relative w-auto pl-4 flex-initial">
@@ -133,6 +135,7 @@
         </div>
       </div>
 
+      {{-- Tables and Charts --}}
       <div class="px-4 md:px-10 mx-auto w-full -m-24">
         <div class="flex flex-wrap">
           <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
@@ -174,7 +177,7 @@
                       Performance
                     </h6>
                     <h2 class="text-blueGray-700 text-xl font-semibold">
-                      Total orders
+                      Halls Allocation
                     </h2>
                   </div>
                 </div>
@@ -231,37 +234,7 @@
                   <tbody>
                     <tr>
                       <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/
-                      </th>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        4,569
-                      </td>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        340
-                      </td>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                        46,53%
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/index.html
-                      </th>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        3,985
-                      </td>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        319
-                      </td>
-                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
-                        46,53%
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/charts.html
+                        /home
                       </th>
                       <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         3,513
@@ -276,7 +249,38 @@
                     </tr>
                     <tr>
                       <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/tables.html
+                        /dashboard/
+                      </th>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        4,569
+                      </td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        340
+                      </td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
+                        46,53%
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        /application-form
+                      </th>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        3,985
+                      </td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        319
+                      </td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
+                        46,53%
+                      </td>
+                    </tr>
+                   
+                    <tr>
+                      <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        /maintenance/faults
                       </th>
                       <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         2,050
@@ -291,7 +295,7 @@
                     </tr>
                     <tr>
                       <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/profile.html
+                        /fault/reports
                       </th>
                       <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         1,795
@@ -367,6 +371,6 @@
       </div>
       
     </div>
-  </div>
+</div>
     
 @endsection

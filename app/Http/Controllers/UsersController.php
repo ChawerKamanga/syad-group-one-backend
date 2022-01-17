@@ -82,7 +82,6 @@ class UsersController extends Controller
             ]);
 
             $file->move('images/upload', $imageName);
-            //dd();
 
             $user->save();
 

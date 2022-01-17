@@ -49,8 +49,9 @@
 
       (function() {
         let cData = JSON.parse(`<?php echo $chart_data; ?>`);
+        let cData2 = JSON.parse(`<?php echo $chart2_data; ?>`);
 
-        // console.log(cData);
+        console.log(cData);
 
         /* Add current date to the footer */
         document.getElementById("javascript-date").innerHTML = new Date().getFullYear();
@@ -60,15 +61,6 @@
           type: "line",
           data: {
             label: "Users Count",
-            // labels: [
-            //   "January",
-            //   "February",
-            //   "March",
-            //   "April",
-            //   "May",
-            //   "June",
-            //   "July"
-            // ],
             labels: cData.label,
             datasets: [
               {
@@ -158,30 +150,22 @@
         config = {
           type: "bar",
           data: {
-            labels: [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July"
-            ],
+            labels: cData2.label,
             datasets: [
               {
-                label: new Date().getFullYear(),
+                label: 'Max',
                 backgroundColor: "#ed64a6",
                 borderColor: "#ed64a6",
-                data: [30, 78, 56, 34, 100, 45, 13],
+                data: cData2.data,
                 fill: false,
                 barThickness: 8
               },
               {
-                label: new Date().getFullYear() - 1,
+                label: 'Allocated',
                 fill: false,
                 backgroundColor: "#4c51bf",
                 borderColor: "#4c51bf",
-                data: [27, 68, 86, 74, 10, 4, 87],
+                data: [27, 68, 86, 74, 10, 4, 87, 90],
                 barThickness: 8
               }
             ]

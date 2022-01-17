@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Allocation;
+use App\Models\Hall;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $msg = 'Dashboard';
         $mesho = DB::table('users')->where([
             ['room_id', '=', Auth::user()->room_id],
             ['hall_id', '=', Auth::user()->hall_id],
@@ -31,17 +31,12 @@ class DashboardController extends Controller
             ['id', '<>', Auth::user()->id],
         ])->paginate(10);
 
-
-        return view('dashboard.index', ['mesho' => $mesho, 'hallmates' => $hallmates, 'msg' => $msg]);
-    }
-
-    public function showDash()
-    {
         $record = User::select(DB::raw("COUNT(*) as count"), DB::raw("DAYNAME(created_at) as day_name"), DB::raw("DAY(created_at) as day"))
             ->where('created_at', '>', Carbon::today()->subDay(6))
             ->groupBy('day_name', 'day')
             ->orderBy('day')
             ->get();
+        
         
         $data = [];
 
@@ -50,11 +45,21 @@ class DashboardController extends Controller
             $data['data'][] = (int) $row->count;
         }
 
-
+        
+        $data1 = [];
+        
+        $maxHalls = Hall::orderBy('created_at', 'asc')->where('is_at_camp', 0)->take(8)->get();
+        
+        foreach ($maxHalls as $maxHall) {
+            $data1['label'][] = $maxHall->hall_name;
+            $data1['data'][] = (int) $maxHall->max_students;
+        }        
+        
         $data['chart_data'] = json_encode($data);
 
-        // return view('chart-js', $data);
 
-        return view('dashboard.temp', $data);
-    }
+        $data1['chart2_data'] = json_encode($data1);
+
+        return view('dashboard.index', $data, $data1, ['mesho' => $mesho, 'hallmates' => $hallmates]);
+    }    
 }
