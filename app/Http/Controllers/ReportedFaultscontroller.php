@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\FaultReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReportedFaultscontroller extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth']);
+    }
+
     public function index()
     {
+        $this->authorize('isAdmin', Auth::user());
         $reportedFaults =  FaultReport::all();
         $msg = 'Reported Faults';
         return view('maintenance.faults.reports', ['reportedFaults' => $reportedFaults, 'msg' => $msg]);
@@ -16,6 +22,7 @@ class ReportedFaultscontroller extends Controller
 
     public function solved($id)
     {
+        $this->authorize('isAdmin', Auth::user());
         $faultReport = FaultReport::findOrFail($id);
 
         

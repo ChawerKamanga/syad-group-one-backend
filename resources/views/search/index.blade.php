@@ -95,6 +95,7 @@
                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                             {{ $student->phonenumber }}
                         </td> 
+                        @can('isAdmin', Auth::user())
                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                           @if ($student->is_allocated)
                             <button
@@ -121,7 +122,8 @@
                           @endif
 
                         </td>
-                        </tr>
+                        @endcan
+                      </tr>
                     @endforeach
                     </tbody>
                   </table>
